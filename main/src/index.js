@@ -24,8 +24,8 @@ class Echarts extends Component {
   }
 
   render() {
-    const bmapSource = (Platform.OS == 'ios') ? require('./Bmap.html') : {'uri': 'file:///android_asset/echarts/Bmap.html'} // 修复android release路径问题
-    const indexSource = (Platform.OS == 'ios') ? require('./index.html') : {'uri': 'file:///android_asset/echarts/index.html'} // 修复android release路径问题
+    const bmapSource = require('./Bmap.html'); 
+    const indexSource = require('./index.html');
     let source = this.props.isMap ? bmapSource : indexSource;
     return (
       <View style={{flexDirection: 'row', width: this.props.width}}>
